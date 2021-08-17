@@ -1,1 +1,26 @@
-echo "Ravi"
+pipeline {
+    agent any
+
+    stages {
+        stage('compile') {
+            steps {
+                echo 'compiling source code.. This is compile phase'
+            }
+        }
+        stage('test') {
+            steps {
+                echo 'testing source code.. This is test phase'
+            }
+        }
+        stage('package') {
+            steps {
+                echo 'creating package....  This is package phase'
+            }
+        }
+	stage('Deploy') {
+		steps {
+			echo 'deploying package.... this is deploy phase'
+		}
+	}
+    }
+}
